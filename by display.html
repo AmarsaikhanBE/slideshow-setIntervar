@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLideShow by time</title>
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+            height: 100vh;
+        }
+        
+        .container {
+            width: 800px;
+            height: 500px;
+            border-radius: 2rem;
+            border: .2rem solid green;
+            overflow: hidden;
+        }
+        
+        .container img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="images/Image 1-7-22 at 1.22 PM.jpeg" alt="img1">
+        <img src="images/Image 1-7-22 at 1.23 PM (1).jpeg" alt="img2">
+        <img src="images/Image 1-7-22 at 1.23 PM (2).jpeg" alt="img3">
+    </div>
+    <script>
+        const images = document.querySelectorAll('img');
+        let i = 0;
+        setInterval(() => {
+            images.forEach((img, i) => {
+                img.style.display = 'none';
+            });
+            if (i == images.length)
+                i = 0;
+            images[i].style.display = null;
+            i++;
+        }, 1500);
+    </script>
+</body>
+
+</html>

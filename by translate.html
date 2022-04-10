@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLideShow by time</title>
+    <style>
+        body {
+            display: grid;
+            place-content: center;
+            height: 100vh;
+        }
+        
+        .container {
+            width: 800px;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #img {
+            position: absolute;
+            width: calc(3 * 800px);
+            display: flex;
+            flex-wrap: nowrap;
+            transition: transform 1.5s ease-in-out;
+        }
+        
+        #img img {
+            width: 800px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="img">
+            <img src="images/Image 1-7-22 at 1.22 PM.jpeg" alt="img1">
+            <img src="images/Image 1-7-22 at 1.23 PM (1).jpeg" alt="img2">
+            <img src="images/Image 1-7-22 at 1.23 PM (2).jpeg" alt="img3">
+            <img src="images/Image 1-7-22 at 1.22 PM.jpeg" alt="img1">
+        </div>
+    </div>
+    <script>
+        let x = 0
+        setInterval(() => {
+            x--
+            if (x < -3) {
+                x = 0
+            }
+            img.style.transform = 'translateX(' + x * 800 + 'px)'
+        }, 2000)
+    </script>
+</body>
+
+</html>
